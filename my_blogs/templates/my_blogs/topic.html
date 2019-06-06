@@ -1,0 +1,18 @@
+<p>
+	<a href="{% url 'my_blogs:home'%}">画棋的主页</a> - 
+	<a href="{% url 'my_blogs:topics'%}">所有主题</a>
+</p>
+
+{% block content%}
+<p>主题：{{topic}}</p>
+<p>文章：</p>
+<ol>
+	{% for headline_article in headline_articles%}
+		{% for headline,article in headline_article.items %}
+			<li><p>{{headline}}</p></li>
+			<li><p>{{article}}</p></li>
+		{% endfor %}
+	{% endfor %}
+</ol>
+
+{% endblock content %}

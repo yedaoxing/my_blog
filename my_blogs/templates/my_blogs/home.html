@@ -1,0 +1,19 @@
+{% extends "my_blogs/base.html" %}
+
+{% block content%}
+<p> my_blog</p>
+
+<p>record my learning</p>
+<p>Topics:</p>
+
+<ul>
+	{% for topic in topics%}
+	<li>{{topic}}</li>
+	{% empty %}
+	<li>当前还未添加学习主题</li>
+	{% endfor %}  
+	
+</ul>
+{% endblock content %}
+
+
