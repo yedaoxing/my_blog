@@ -1,6 +1,10 @@
 <p>
 	<a href="{% url 'my_blogs:home'%}">画棋的主页</a> - 
-	<a href="{% url 'my_blogs:topics'%}">所有主题</a>
+	<a href="{% url 'my_blogs:topics'%}">所有主题</a> -
+	<a href="{% url 'my_blogs:topic' topic_id=1 %}">Ubuntu</a> -
+	<a href="{% url 'my_blogs:topic' topic_id=2 %}">python</a> -
+	<a href="{% url 'my_blogs:topic' topic_id=3 %}">git</a> -
+	<a href="{% url 'my_blogs:topic' topic_id=2 %}">English</a>
 </p>
 
 {% block content%}

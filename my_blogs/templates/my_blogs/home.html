@@ -9,6 +9,11 @@
 <ul>
 	{% for topic in topics%}
 	<li>{{topic}}</li>
+	<!-- the next sentence also have the same problem as line16, the re catch \d+ in urls.py had be change to string!!!
+	<a href="/topics/{{topic.id}}/">{{topic}}</a> -->
+	<!-- the below sentence doesn't work. because the topic.id isn't int-->
+	<!--
+		<li><a href="{% url 'my_blogs:topic' topic.id %}">{{topic}}</a> </li>-->
 	{% empty %}
 	<li>当前还未添加学习主题</li>
 	{% endfor %}  

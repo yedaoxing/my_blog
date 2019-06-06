@@ -4,15 +4,22 @@
 </p>
 
 {% block content%}
-<p>主题：{{topic}}</p>
-<p>文章：</p>
-<ol>
-	{% for headline_article in headline_articles%}
-		{% for headline,article in headline_article.items %}
-			<li><p>{{headline}}</p></li>
-			<li><p>{{article}}</p></li>
-		{% endfor %}
-	{% endfor %}
-</ol>
+ <p>主题：{{ topic }}</p>
 
+ <p>文章：</p>
+ <u>
+ 	<!-- please careful don't use articles --> 
+ 	{% for article in articles%}
+ 	<li>
+ 		<p>题目：{{ article.headline }}</p>
+ 		<p>{{article.pub_date}}</p>
+ 		<p>解决：{{ article.content|linebreaks }}</p>
+ 		<!-- also can use linebraeks to replace linebreaksbr, but the breaklines will be better in Chinese-->
+ 	</li>
+ 	{% empty %}
+ 	<li>
+ 		目前还未添加任何文章，请少侠稍等。
+ 	</li>
+ 	{% endfor %}
+ </u>
 {% endblock content %}
