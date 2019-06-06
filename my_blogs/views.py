@@ -12,10 +12,7 @@ def build_article(headline,article):
 # Create your views here.
 def home(request):
 	"""home page"""
-	query_topics = Topic.objects.all()
-	topics = []
-	for topic in query_topics:
-		topics.append(topic.text)
+	topics = Topic.objects.all()
 	#topics = topics[:-1]
 	html_content = {'topics':topics}
 	return render(request,'my_blogs/home.html',html_content)

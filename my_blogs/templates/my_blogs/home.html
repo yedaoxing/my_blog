@@ -1,17 +1,17 @@
 {% extends "my_blogs/base.html" %}
 
 {% block content%}
-<p> my_blog</p>
+<p> 画棋的博客</p>
 
-<p>record my learning</p>
-<p>Topics:</p>
+<p>记录学习，分享经验</p>
+<p>学习内容:</p>
 
 <ul>
 	{% for topic in topics%}
 	<li>{{topic}}</li>
 	<!-- the next sentence also have the same problem as line16, the re catch \d+ in urls.py had be change to string!!!
 	<a href="/topics/{{topic.id}}/">{{topic}}</a> -->
-	<!-- the below sentence doesn't work. because the topic.id isn't int-->
+	<!-- if the below sentence doesn't work. because the topic.id isn't int-->
 	<!--
 		<li><a href="{% url 'my_blogs:topic' topic.id %}">{{topic}}</a> </li>-->
 	{% empty %}
