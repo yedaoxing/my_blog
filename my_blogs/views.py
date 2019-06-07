@@ -36,7 +36,7 @@ def article(request,topic_id,article_id):
 	#show article
 	topic = Topic.objects.get(id=int(topic_id))
 	article = topic.article_set.get(id=int(article_id))
-	html_content = {'topics':topic,'article':article}
+	html_content = {'topic':topic,'article':article}
 	return render(request,'my_blogs/article.html',html_content)
 
 

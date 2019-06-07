@@ -1,27 +1,40 @@
 {% extends "my_blogs/base.html" %}
 
+{% block header %}
+ <h2>主题：{{ topic }}</h2>
+{% endblock header%}
+
 
 {% block content%}
- <p>主题：{{ topic }}</p>
 
- <p>文章：</p>
- <u>
+
+<h3>
+ <ol>
  	<!-- please careful don't use articel --> 
- 	{% for article in articles%}
- 	<li>
- 		<p>
- 			 <a href="{% url 'my_blogs:article' topic.id article.id %}"> 
- 			<!-- href="topic/{{topic.id}}/{{article.id}}" -->
- 			题目：{{ article.headline }}</a> 
- 		</p>
- 		<p>{{article.pub_date}}</p>
- 		<p>解决：{{ article|linebreaks }}</p>
- 		<!-- also can use linebraeks to replace linebreaksbr, but the breaklines will be better in Chinese-->
- 	</li>
- 	{% empty %}
- 	<li>
- 		目前还未添加任何文章，请少侠稍等。
- 	</li>
- 	{% endfor %}
- </u>
+ 	
+ 		{% for article in articles%}
+
+	 	<li>
+
+	 		<h3>
+	 			 <a href="{% url 'my_blogs:article' topic.id article.id %}"> 
+	 			<!-- href="topic/{{topic.id}}/{{article.id}}" -->
+	 			{{ article.headline }}</a> 
+	 		</h3>
+	 		<h4>{{article.pub_date}}</h4>
+
+
+	 		<h4>{{ article|linebreaks }}</h4>
+	 		<!-- also can use linebraeks to replace linebreaksbr, but the breaklines will be better in Chinese-->
+	 	</li>
+	 	{% empty %}
+	 	<li>
+	 		目前还未添加任何文章，请稍等。
+	 	</li>
+	 	{% endfor %}
+
+
+ 	
+ </ol>
+ </h3>
 {% endblock content %}

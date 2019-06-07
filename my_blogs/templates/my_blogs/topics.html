@@ -1,19 +1,23 @@
+
 {% extends "my_blogs/base.html" %}
+{% block header %}
+<h1>学习主题:</h1>
+{% endblock header %}
 
 {% block content%}
-<p>学习主题:</p>
 
 <ul>
 	{% for topic in topics%}
 	<li>
 		<!--if the next sentence doesn't work, it maybe the topic.id isn't int type, so you can use int() tp change it in the views.py -->
 		<!--<a href="{% url 'my_blogs:topic' topic.id %}">{{topic}}</a> -->
-		<a href="/topics/{{topic.id}}/">{{topic}}</a>
+		<h3><a href="/topics/{{topic.id}}/">{{topic}}</a></h3>
 	</li>
 	{% empty %}
 	<li>当前还未添加学习主题</li>
-	{% endfor %}  
-	
+	{% endfor %}  	
 </ul>
-
 {% endblock content %}
+
+
+

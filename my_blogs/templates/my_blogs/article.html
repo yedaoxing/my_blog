@@ -1,9 +1,14 @@
 {% extends "my_blogs/base.html" %}
 
+{% block header %}
+<h2><a href="{% url 'my_blogs:topic' topic.id %}">主题：{{article.topic}}</a>  </h2>
+<h3>标题：{{article.headline}}</h3>
+{% endblock header%}
+
 {% block content%}
 
-<p>主题：{{topic}}</p>
-<p>标题：{{article.headline}}</p>
+
+
 <p>内容：{{article.content}}</p>
 
 {% endblock content%}

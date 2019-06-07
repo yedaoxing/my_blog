@@ -1,24 +1,35 @@
+
 {% extends "my_blogs/base.html" %}
 
-{% block content%}
-<p> 画棋的博客</p>
+{% block header %}
+	<div class='jumbotron'>
+		<h1>画棋的博客</h1>
+	</div>
+{% endblock header %}
 
-<p>记录学习，分享经验</p>
-<p>学习内容:</p>
-
-<ul>
-	{% for topic in topics%}
-	<li>{{topic}}</li>
-	<!-- the next sentence also have the same problem as line16, the re catch \d+ in urls.py had be change to string!!!
-	<a href="/topics/{{topic.id}}/">{{topic}}</a> -->
-	<!-- if the below sentence doesn't work. because the topic.id isn't int-->
-	<!--
-		<li><a href="{% url 'my_blogs:topic' topic.id %}">{{topic}}</a> </li>-->
-	{% empty %}
-	<li>当前还未添加学习主题</li>
-	{% endfor %}  
-	
-</ul>
+{% block content %}
+	<h2>
+		记录学习，分享经验。
+	</h2>
+	<h2>
+		学习内容：
+	</h2>
+	<h4>
+		<ul>
+			{% for topic in topics%}
+			<li><a href="{% url 'my_blogs:topic'  topic.id %}">{{topic}}</a></li>
+			<!-- the next sentence also have the same problem as line16, the re catch \d+ in urls.py had be change to string!!!
+			<a href="/topics/{{topic.id}}/">{{topic}}</a> -->
+			<!-- if the below sentence doesn't work. because the topic.id isn't int-->
+			<!--
+				<li><a href="{% url 'my_blogs:topic' topic.id %}">{{topic}}</a> </li>-->
+			{% empty %}
+			<li>当前还未添加学习主题</li>
+			{% endfor %}  	
+		</ul>
+	</h4>
+	<p>
+		本博客后端使用Python3.6+django2.2，前端使用bootstrap3。
+	</p>
+	<p>主要用于记录学习python和django建站中遇到的问题，同时记录一些编程类和自己编写日常小程序的教程。有问题请发QQ邮箱：1821367725@qq.com</p>
 {% endblock content %}
-
-
