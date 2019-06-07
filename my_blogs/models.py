@@ -22,4 +22,4 @@ class Article(models.Model):
 		if len(self.content) < 100:
 			return self.content
 		else:
-			return self.content[:100]
+			return self.content[:100] + '......'
