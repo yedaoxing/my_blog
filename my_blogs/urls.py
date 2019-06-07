@@ -15,7 +15,11 @@ urlpatterns = [
 
 	#show the ask topic
 	#re_path(r'^topics/(?P<topic_id>\d+)/$',views.topic,name='topic'),
-	re_path(r'^topics/(?P<topic_id>\d+)/$',views.topic,name='topic')
+	re_path(r'^topics/(?P<topic_id>\d+)/$',views.topic,name='topic'),
+
+	#show article
+	re_path(r'^topics/(?P<topic_id>\d+)/(?P<article_id>\d+)/$',views.article,
+		name='article')
 
 ]
 

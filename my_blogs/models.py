@@ -19,7 +19,7 @@ class Article(models.Model):
 
 	def __str__(self):
 		"""return the article's content"""
-		if len(self.content) < 30:
+		if len(self.content) < 100:
 			return self.content
 		else:
-			return self.content[:30]
+			return self.content[:100]

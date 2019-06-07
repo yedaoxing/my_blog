@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Topic
+from .models import Topic,Article
 
 def build_article(headline,article):
 	"""build a headline-article dic"""
@@ -31,6 +31,13 @@ def topic(request,topic_id):
 	articles = topic.article_set.all()
 	html_content = {'topic':topic,'articles':articles}
 	return render(request,'my_blogs/topic.html',html_content)
+
+def article(request,topic_id,article_id):
+	#show article
+	topic = Topic.objects.get(id=int(topic_id))
+	article = topic.article_set.get(id=int(article_id))
+	html_content = {'topics':topic,'article':article}
+	return render(request,'my_blogs/article.html',html_content)
 
 
 
