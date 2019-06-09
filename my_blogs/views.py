@@ -10,12 +10,12 @@ def build_article(headline,article):
 	return dic
 
 # Create your views here.
-def home(request):
+def index(request):
 	"""home page"""
 	topics = Topic.objects.all()
 	#topics = topics[:-1]
 	html_content = {'topics':topics}
-	return render(request,'my_blogs/home.html',html_content)
+	return render(request,'my_blogs/index.html',html_content)
 
 
 def topics(request):

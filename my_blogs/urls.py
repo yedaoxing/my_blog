@@ -7,7 +7,7 @@ from . import views
 urlpatterns = [
 	#home page
 	#path('',views.home,name='home'),
-	re_path(r'^$',views.home,name='home'),
+	re_path(r'^$',views.index,name='index'),
 
 	#all the topics
 	#path('topics',views.topics,name='topics') why this sentences doesn't work?
