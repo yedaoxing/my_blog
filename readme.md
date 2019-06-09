@@ -18,7 +18,7 @@
 * 使用django1.8.4跟着代码实现一遍，部署到heroku，但是发现django1.8.4已经不再支持，所以相当了解了网站开发流程，期间自己在本地部署时发现无法添加新表单，查了一遍代码，没有码错，应该是代码的逻辑错误，而且书上的代码和配套资源的代码并不是完全相同，可能是读者反馈后作者进行了修改，拿到配套资源的时候已经实现了大部分功能，发现django1.8.4已经不再维护遂弃坑。[python从入门到实践配套源码](https://pan.baidu.com/s/1KZ3FJfwtnIcJC6CFd_4Esg )：
 * 提取码：k0b3 
 * 使用了国内云服务器的免费试用，自己无法解决uWSGI和nginx的配置问题，遂放弃部署
-* 写好了，但是使用了bootstrap，使用gunicorn当服务器对处理静态文件不理想，访问网页需要2S左右。配置MySQL之后速度提升。
+* 写好了，但是使用了bootstrap3，使用gunicorn当服务器对处理静态文件不理想，访问网页需要2S左右。配置MySQL之后速度提升。
 
 ## 收获
 
@@ -57,7 +57,7 @@ pymysql.install_as_MYSQLdb()
 #配置mysql后没有权限，下一条命令无法运行
 python manage.py runserver
 #使用sudo 或者 root权限运行
-sudo manage.py runserver
+sudo python manage.py runserver
 ```
 
 
