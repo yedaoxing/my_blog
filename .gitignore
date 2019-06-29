@@ -91,6 +91,7 @@ env.bak/
 venv.bak/
 blog_env/
 dj_env/
+django_env/
 
 # Spyder project settings
 .spyderproject
@@ -104,3 +105,8 @@ dj_env/
 
 # mypy
 .mypy_cache/
+
+#my niginx setting
+mysite_nginx.conf
+uwsgi.log
+uwsgi.gid

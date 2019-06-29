@@ -12,7 +12,7 @@ class Topic(models.Model):
 
 class Article(models.Model):
 	"""my learning ariticle"""
-	pub_date = models.DateField()
+	pub_date = models.DateField(auto_now_add=True)
 	headline = models.CharField(max_length=200)
 	content = models.TextField()
 	topic = models.ForeignKey(Topic,on_delete=models.CASCADE)
